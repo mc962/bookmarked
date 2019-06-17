@@ -7,6 +7,7 @@ import {
   BookmarkData,
   BookmarksFolderData
 } from './interfaces';
+import { basename } from 'path';
 
 class BookmarksFileLoader {
   // TODO support other browsers than chrome
@@ -16,12 +17,15 @@ class BookmarksFileLoader {
   platform: string;
   bookmarksFilePath: string;
   bookmarks: Array<object>;
+  // folders: object;
 
   constructor() {
     this.platform = os.platform();
     this.bookmarksFilePath = this._setBookmarksFilePath();
 
     this.bookmarks = [];
+    // TODO may be better to use object where keys are the fullpath, and values are any additional data, such as name
+    // this.folders: { [index: string] : object } = {};
   }
 
   /**
@@ -74,6 +78,10 @@ class BookmarksFileLoader {
         // create 'current path' of folder bookmark is contained in by adding the 'name' attribute of
         // the object recognized as a folder to the folderName built in the previous recursive iteration
         const nestedPath = path.join(folderName, castedFolder.name);
+
+        // create a new folder from current folder data
+        this.createFolder(nestedPath);
+
         // recursively iterate through folder's children
         this._parseFolderData(childData, nestedPath);
       });
@@ -96,7 +104,8 @@ class BookmarksFileLoader {
   }
 
   /**
-   * STUB for actual Bookmark creation, RE-DOCUMENT when implementation is finalized
+   * Create a new Bookmark, based on passed attributes.
+   * Bookmark should refer to at least 1 folder
    * @param {BookmarkData} bookmarkData attributes to be used to create new Bookmark
    */
   createBookmark(bookmarkData: BookmarkData) {
@@ -108,6 +117,21 @@ class BookmarksFileLoader {
       //   path.join(bookmarkData.folder_path, bookmarkData.url)
       // );
       this.bookmarks.push(bookmarkData);
+    }
+  }
+
+  /**
+   * Create a new Folder that will contain references to child bookmarks, based on given path
+   * @param {string} folderPath
+   */
+  createFolder(folderPath: string) {
+    if (folderPath.length > 1) {
+      const folderData = {
+        path: folderPath,
+        name: path.basename(folderPath)
+      };
+
+      // this.folders[folderPath] = folderData;
     }
   }
 
