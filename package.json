@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@elastic/elasticsearch": "^7.1.0",
     "fs-extra": "^8.0.1"
   },
   "devDependencies": {
