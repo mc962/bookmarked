@@ -55,12 +55,14 @@ class BookmarksFileLoader {
   /**
    * Recursively iterate through passed bookmarks object until a bookmarks is found, at which point
    * bookmark may be created
-   * @param {any} bookmarksData single bookmark 'base case' to be used to create a bookmark,
+   * @param {BookmarksFolderData | BookmarkData} bookmarksData single bookmark 'base case' to be used to create a bookmark,
    *  or folder to recurse into for further bookmarks
-   *  TODO write better type than ANY
    * @param {string} folderName current folder's path that tracks which folder bookmark is inside
    */
-  _parseFolderData(bookmarksData: any, folderName: string = '') {
+  _parseFolderData(
+    bookmarksData: BookmarksFolderData | BookmarkData,
+    folderName: string = ''
+  ) {
     // either recurse through to the child bookmarks of folder, or take action on a single bookmark (base case),
     // depending on 'type' attribute of bookmarksData
     if (bookmarksData.type === 'folder') {
@@ -81,7 +83,7 @@ class BookmarksFileLoader {
       // add path to folder containing current bookmark to data that will be used to create a new bookmark
       castedBookmark.folder_path = folderName;
       // create a new bookmark object with the current bookmark data
-      this.createBookmark(bookmarksData);
+      this.createBookmark(castedBookmark);
       // return from the current stack frame
       // (return value is unnecessary as it is already used to create new bookmark)
       return;
