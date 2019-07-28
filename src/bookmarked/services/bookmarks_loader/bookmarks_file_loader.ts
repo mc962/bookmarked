@@ -7,7 +7,7 @@ import {
   BookmarkData,
   BookmarksFolderData
 } from './interfaces';
-import { basename } from 'path';
+// import { basename } from 'path';
 
 class BookmarksFileLoader {
   // TODO support other browsers than chrome
