@@ -9,6 +9,7 @@ export async function up(knex: Knex): Promise<any> {
             table.string('url', 255).notNullable().unique();
             table.string('folder_path');
             table.jsonb('meta_info');
+            table.timestamps();
         });
 }
 

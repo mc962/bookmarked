@@ -3,34 +3,50 @@
 const { Model } = require('objection');
 const Knex = require('knex');
 
-// const knex = Knex({
-  const knexSettings = {
+const knexSettings = {
   client: 'pg',
-  dialect: 'postgresql',
-  connection: {
-    host: '/var/run/postgresql',
-    port: 5432,
-    database: 'bookmarked_dev'
+  development: {
+    client: 'pg',
+    connection: {
+      host: '/var/run/postgresql',
+      port: 5432,
+      database: 'bookmarked_dev'
+    },
+    // connection: {
+    //   username: 'hatsumei',
+    //   password: 'hatsu_dev',
+    //   port: 5432,
+    //   database: 'bookmarked_dev'
+    // },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: 'migrations'
+    }
   },
-  // connection: {
-  //   username: 'hatsumei',
-  //   password: 'hatsu_dev',
-  //   port: 5432,
-  //   database: 'bookmarked_dev'
-  // },
-  pool: {
-    min: 2,
-    max: 10
-  },
-  migrations: {
-    tableName: 'knex_migrations',
-    directory: 'migrations'
+  production: {
+    client: 'pg', 
+    dialect: 'postgresql',
+    connection: {
+      database: 'bookmarked_prod'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: 'migrations'
+    }
   }
 };
 
+// TODO move this to main app init
 const knex = Knex(knexSettings)
-
-Model.knex(knex);
+// Model.knex(knex);
 
 module.exports = knexSettings;
 

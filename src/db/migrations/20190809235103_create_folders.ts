@@ -7,6 +7,7 @@ export async function up(knex: Knex): Promise<any> {
             table.increments('id');
             table.string('name', 255).notNullable().unique();
             table.string('folder_path', 255);
+            table.timestamps();
         })
         .alterTable('bookmarks', (table) => {
             table.integer('folder_id');
