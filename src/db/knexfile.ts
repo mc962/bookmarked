@@ -1,7 +1,7 @@
 // require('dotenv').config();
 
-const { Model } = require('objection');
-const Knex = require('knex');
+import  { Model } from 'objection';
+import Knex from "knex";
 
 const knexSettings = {
   client: 'pg',

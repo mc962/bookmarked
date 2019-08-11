@@ -1,6 +1,4 @@
-import { snakeCaseMappers } from "objection";
-
-const { Model } = require('objection');
+import { Model, snakeCaseMappers } from "objection";
 
 class Base extends Model {
     static columnNameMappers = snakeCaseMappers();

@@ -1,3 +1,5 @@
+import { Model } from 'objection';
+
 import Base from './base';
 import Folder from './folder';
 

@@ -1,5 +1,7 @@
+import { Model } from 'objection';
+
 import Base from './base';
-import Bookmark from './ bookmark';
+import Bookmark from './bookmark'
 
 class Folder extends Base {
     // constructor() {
