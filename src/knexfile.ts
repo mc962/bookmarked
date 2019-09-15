@@ -1,6 +1,5 @@
 // require('dotenv').config();
 
-import  { Model } from 'objection';
 import Knex from "knex";
 
 const knexSettings = {
@@ -48,7 +47,7 @@ const knexSettings = {
 const knex = Knex(knexSettings)
 // Model.knex(knex);
 
-module.exports = knexSettings;
+export default knexSettings;
 
 /**
  * // Update with your config settings.

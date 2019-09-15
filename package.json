@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/knex": "^0.16.1",
     "dotenv": "^8.0.0",
     "fs-extra": "^8.1.0",
     "knex": "^0.17.6",
