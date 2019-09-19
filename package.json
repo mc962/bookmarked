@@ -9,9 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dompurify": "^2.0.0",
+    "express": "^4.17.1",
     "fs-extra": "^8.1.0"
   },
   "devDependencies": {
+    "@types/dompurify": "0.0.33",
+    "@types/express": "^4.17.1",
     "@types/node": "^12.6.8"
   }
 }
