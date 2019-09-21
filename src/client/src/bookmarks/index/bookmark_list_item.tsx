@@ -50,10 +50,10 @@ class BookmarkListItem extends React.Component<ItemProps, ItemState> {
 
     render() {
         return (
-            <li className="bookmark-list-item">
-                <a href={this.props.url} target='_blank' rel='noopener noreferrer'>
+            <li className="bookmark-list-item card">
+                <a href={this.props.url} target='_blank' rel='noopener noreferrer' className='bookmark-url'>
                     <h6 className='bookmark-title'>{this.props.name}</h6>
-                    <div className='bookmark-card'>
+                    <div className='bookmark-stats'>
                         {/* <h6 className='bookmark-title'>{this.state.title}</h6> */}
                         <img src={this.state.image} alt={`${this.state.title} - Bookmark Preview`} className='bookmark-image' />
                         <p className='bookmark-description'>{this.state.description}</p>
