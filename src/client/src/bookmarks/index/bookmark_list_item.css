@@ -1,0 +1,68 @@
+.bookmark-list-item {
+    list-style: none;
+    background-color: #30353e;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+}
+
+.bookmark-title {
+    font-size: 1rem;
+}
+
+.bookmark-url {
+    color: white;
+    text-decoration: none;
+}
+
+.bookmark-page {
+    padding: 3%;
+    color: white;
+    text-decoration: none;
+    width: 80%;
+}
+
+.bookmark-image {
+    max-width: 10rem;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+    border-radius: 5px;
+    /* margin: 5% 0%; */
+    height: 300px;
+    padding: 2%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 4px 8px 0 #b3b3b3;
+}
+
+/* Add some padding inside the card container */
+.card-container {
+  padding: 2px 16px;
+}
+
+.bookmark-image {
+    border-radius: 5px 5px 0 0;
+    max-width: 100px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

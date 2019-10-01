@@ -42,6 +42,17 @@ class BookmarksDirectory extends React.Component {
                     'og:image': 'https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded',
                     'og:description': 'Stack Overflow | The World’s Largest Online Community for Developers'
                 }
+            },
+            {
+                id: 4,
+                name: 'VisaJourney',
+                type: 'url',
+                url: 'https://www.visajourney.com/',
+                metaProperties: {
+                    'og:title': '',
+                    'og:image': 'https://static.visajourney.com/images/uploads/monthly_2019_06/vj-square.jpg.31b4a504cab525579e4c5696b5c02e44.jpg',
+                    'og:description': ''
+                }
             }
         ];
 

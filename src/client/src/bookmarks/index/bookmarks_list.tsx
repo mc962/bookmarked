@@ -17,7 +17,9 @@ class BookmarksList extends React.Component<BookmarksListProps, {}> {
     _listItems(items: any) {
         return items.map((item: any) => {
             return(
-                <BookmarkListItem key={item.id} id={item.id} name={item.name} url={item.url} type={item.type} metaProperties={item.metaProperties} />
+                <a href='#' className='bookmark-page' key={item.id}>
+                    <BookmarkListItem id={item.id} name={item.name} url={item.url} type={item.type} metaProperties={item.metaProperties} />
+                </a>
             );
         });
     }
