@@ -11,7 +11,10 @@
   "dependencies": {
     "dompurify": "^2.0.0",
     "express": "^4.17.1",
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "pg": "^7.12.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.19"
   },
   "devDependencies": {
     "@types/dompurify": "0.0.33",
