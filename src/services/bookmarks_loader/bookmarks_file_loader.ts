@@ -7,7 +7,7 @@ import {
   BookmarkData,
   BookmarksFolderData
 } from './interfaces';
-import { basename } from 'path';
+import { Bookmark } from '../../db/entity/Bookmark';
 
 class BookmarksFileLoader {
   // TODO support other browsers than chrome
@@ -110,12 +110,12 @@ class BookmarksFileLoader {
    */
   createBookmark(bookmarkData: BookmarkData) {
     if (this._shouldIgnoreBookmark(bookmarkData.url)) {
-      // console.log(`Ignoring browser-internal url: ${bookmarkData.url}`);
+      console.log(`Ignoring browser-internal url: ${bookmarkData.url}`);
     } else {
-      // console.log(
-      //   'Bookmark: ',
-      //   path.join(bookmarkData.folder_path, bookmarkData.url)
-      // );
+      console.log(
+        'Bookmark: ',
+        path.join(bookmarkData.folder_path, bookmarkData.url)
+      );
       this.bookmarks.push(bookmarkData);
     }
   }

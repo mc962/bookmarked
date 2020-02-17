@@ -28,8 +28,7 @@ export class CreateBookmarks1570248482326 implements MigrationInterface {
                 },
                 {
                     name: "meta_info",
-                    type: "json",
-                    default: {}
+                    type: "json"
                 },
                 {
                     name: "folder_path",
